@@ -1,16 +1,14 @@
-import { Text, View, StyleSheet } from "react-native";
-import { red } from "react-native-reanimated/lib/typescript/Colors";
+import React from 'react';
+import { Text, View, StyleSheet } from 'react-native';
+import { WebView } from 'react-native-webview';
 
 export default function Index() {
   return (
-    <View
-      style={styles.container}
-    >
-      <Text
-        style={styles.text}
-      >
-        Porque diablos la version web no funciona?.
-      </Text>
+    <View style={styles.container}>
+      <WebView 
+        source={{ uri: 'https://cineclub-forever.web.app/' }} 
+        style={styles.webview} 
+      />
     </View>
   );
 }
@@ -20,10 +18,14 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#25292e',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
   text: {
     color: '#fff',
+    fontSize: 20,
+    textAlign: 'center',
+    marginVertical: 16,
+  },
+  webview: {
+    flex: 1,
   },
 });
